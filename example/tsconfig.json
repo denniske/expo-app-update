@@ -1,0 +1,10 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "expo-app-update": ["../src/index"],
+      "expo-app-update/*": ["../src/*"]
+    }
+  }
+}

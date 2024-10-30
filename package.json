@@ -1,6 +1,6 @@
 {
   "name": "expo-app-update",
-  "version": "0.1.0",
+  "version": "51.0.6",
   "description": "Fetch the latest version from the play store and app store. Show update dialog (android) or open update in store (ios).",
   "main": "build/index.js",
   "types": "build/index.d.ts",

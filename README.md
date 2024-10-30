@@ -2,10 +2,57 @@
 
 Fetch the latest version from the play store and app store. Show update dialog (android) or open update in store (ios).
 
+## Implementation (Android)
+
+This modules uses `AppUpdateManager` on android for checking for updates:
+https://developer.android.com/guide/playcore/in-app-updates/kotlin-java#update-availability
+
+## Implementation (iOS)
+
+This modules calls 'https://itunes.apple.com/lookup?bundleId=...' on iOS for checking for updates.
+
 # API documentation
 
-- [Documentation for the main branch](https://github.com/expo/expo/blob/main/docs/pages/versions/unversioned/sdk/app-update.md)
-- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/app-update/)
+```typescript
+
+// Get information about the latest version of the app.
+import { getAppUpdateInfo, doAppUpdate } from "expo-app-update";
+
+const appUpdateInfo = await getAppUpdateInfo();
+console.log('appUpdateInfo', appUpdateInfo);
+
+// Show update dialog (only android)
+if (appUpdateInfo.updateAvailable) {
+    await doAppUpdate();
+}
+
+// Open the app store page for the app (useful for iOS)
+await openAppInStore();
+```
+
+
+```
+```typescript
+export interface AppUpdateInfo {
+    updateAvailable: boolean;
+    android?: AndroidInfo;
+    ios?: IosInfo;
+}
+
+export interface AndroidInfo {
+    availableVersionCode: number;
+    clientVersionStalenessDays: any;
+    installStatus: InstallStatus;
+    isUpdateTypeAllowed: boolean;
+    packageName: string;
+    updateAvailability: UpdateAvailability;
+    updatePriority: number;
+}
+
+export interface IosInfo {
+    version: string;
+}
+```
 
 # Installation in managed Expo projects
 

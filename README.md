@@ -75,7 +75,7 @@ Run `npx pod-install` after installing the npm package.
 
 ### Configure for Android
 
-
+No additional steps are required for Android.
 
 # Contributing
 

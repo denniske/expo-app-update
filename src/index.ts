@@ -1,4 +1,4 @@
-import { EventEmitter, NativeModulesProxy, Subscription } from "expo-modules-core";
+// import { EventEmitter, NativeModulesProxy, Subscription } from "expo-modules-core";
 
 // Import the native module. On web, it will be resolved to ExpoAppUpdate.web.ts
 // and on native platforms to ExpoAppUpdate.ts
@@ -20,7 +20,7 @@ export async function getAppUpdateInfo(): Promise<AppUpdateInfo> {
 }
 
 export async function doAppUpdate(): Promise<void> {
-    return await ExpoAppUpdateModule.doAppUpdate();
+    ExpoAppUpdateModule.doAppUpdate();
 }
 
 export async function openAppInStore(): Promise<void> {
@@ -67,10 +67,11 @@ export async function openAppInStore(): Promise<void> {
     //     }
 }
 
-const emitter = new EventEmitter(ExpoAppUpdateModule ?? NativeModulesProxy.ExpoAppUpdate);
+// const emitter = new EventEmitter(ExpoAppUpdateModule);
+//
+// export function addChangeListener(listener: (event: ChangeEventPayload) => void): Subscription {
+//     return emitter.addListener<ChangeEventPayload>("onChange", listener);
+// }
 
-export function addChangeListener(listener: (event: ChangeEventPayload) => void): Subscription {
-    return emitter.addListener<ChangeEventPayload>("onChange", listener);
-}
-
+export { default } from "./ExpoAppUpdateModule";
 export { ExpoAppUpdateView, ExpoAppUpdateViewProps, ChangeEventPayload, UpdateAvailability };

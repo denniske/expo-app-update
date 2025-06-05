@@ -1,7 +1,7 @@
-import { EventEmitter } from "expo-modules-core";
+// import { EventEmitter } from "expo-modules-core";
 import { AppUpdateInfo } from "./ExpoAppUpdate.types";
 
-const emitter = new EventEmitter({} as any);
+// const emitter = new EventEmitter({} as any);
 
 export default {
     PI: Math.PI,

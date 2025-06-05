@@ -1,5 +1,11 @@
-import { requireNativeModule } from 'expo-modules-core';
+import { NativeModule, requireNativeModule } from 'expo-modules-core';
+import { AppUpdateInfo, ExpoAppUpdateModuleEvents } from "./ExpoAppUpdate.types";
 
-// It loads the native module object from the JSI or falls back to
-// the bridge module (from NativeModulesProxy) if the remote debugger is on.
-export default requireNativeModule('ExpoAppUpdate');
+
+declare class ExpoAppUpdateModule extends NativeModule<ExpoAppUpdateModuleEvents> {
+    getAppUpdateInfo(): Promise<AppUpdateInfo>;
+    doAppUpdate(): void;
+}
+
+// This call loads the native module object from the JSI.
+export default requireNativeModule<ExpoAppUpdateModule>('ExpoAppUpdate');

@@ -6,7 +6,7 @@ module.exports = async (env, argv) => {
     {
       ...env,
       babel: {
-        dangerouslyAddModulePathsToTranspile: ['expo-app-update'],
+        dangerouslyAddModulePathsToTranspile: ['my-expo-module'],
       },
     },
     argv

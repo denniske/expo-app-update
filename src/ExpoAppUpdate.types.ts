@@ -6,6 +6,9 @@ export type ExpoAppUpdateViewProps = {
   name: string;
 };
 
+export type ExpoAppUpdateModuleEvents = {
+
+};
 
 export enum UpdateAvailability {
   UNKNOWN = 0,

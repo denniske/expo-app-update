@@ -1,26 +1,28 @@
 {
   "expo": {
-    "name": "expo-app-update-example",
-    "slug": "expo-app-update-example",
+    "name": "my-expo-module-example",
+    "slug": "my-expo-module-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "newArchEnabled": true,
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "expo.modules.appupdate.example"
+      "bundleIdentifier": "expo.modules.myexpomodule.example"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "expo.modules.appupdate.example"
+      "edgeToEdgeEnabled": true,
+      "package": "expo.modules.myexpomodule.example"
     },
     "web": {
       "favicon": "./assets/favicon.png"
